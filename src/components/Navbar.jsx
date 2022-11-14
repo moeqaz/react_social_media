@@ -11,10 +11,19 @@ export default function Navbar(props) {
             </button>
             <div className="collapse navbar-collapse">
             <div className="navbar-nav">
-                <Link className="nav-link active" to="/">Home</Link>
-                <Link className="nav-link active" to="/signup">Sign Up</Link>
-                <Link className="nav-link active" to="/login">Login</Link>
-                <Link className="nav-link active" href="#">Pricing</Link>
+
+                {props.loggedIn ? (
+                    <>
+                    <Link className="nav-link active" to="/">Home</Link>
+                    <Link className="nav-link active" to="/create">Create</Link>
+                    <Link className="nav-link active" to="/login" onClick={props.logUserOut}>Logout</Link>
+                    </>
+                ): (
+                    <>
+                    <Link className="nav-link active" to="/signup">Sign Up</Link>
+                    <Link className="nav-link active" to="/login">Login</Link>
+                    </>
+                )}
             </div>
             </div>
         </div>

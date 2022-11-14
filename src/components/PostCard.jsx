@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function PostCard({ post }) {
     return (
@@ -9,6 +11,7 @@ export default function PostCard({ post }) {
                 <h6 className="card-title mb-3 mx-3">By {post.author.username}</h6>
                 <p className="card-text mx-3">{post.content}</p>
                 <p className="card-text fst-italic text-secondary mt-2 mb-0 mx-3">Created on: {post.date_created}</p>
+                <Link className='btn btn-primary mt-2' to={`/post/${post.id}`}>See Post</Link>
             </div>
         </div>
     )

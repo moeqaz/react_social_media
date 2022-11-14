@@ -26,6 +26,7 @@ export default function Login(props) {
                 let token = data.token;
                 localStorage.setItem('token', token);
                 props.flashMessage(`Welcome ${username}! You are now logged in!`, "success");
+                props.logUserIn();
                 navigate('/')
             } else{
                 props.flashMessage("Invalid username and/or password :(", "danger")
